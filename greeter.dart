@@ -27,12 +27,13 @@ void main() {
 
   do {
     print('Gib dein Alter ein:');
-    String? input3 = stdin.readLineSync();
+    String? input3 = stdin.readLineSync(); //Inputfeld
     alter = int.tryParse(input3 ?? '');
-    if (alter == null) {
-      print('Ungültige Eingabe. Bitte gib eine Zahl ein.');
+
+    if (alter == null || alter < 1 || alter > 150) {
+      print('Ungültige Eingabe. Bitte gib eine Zahl zwischen 1 und 150 ein.');
     }
-  } while (alter == null);
+  } while (alter == null || alter < 1 || alter > 150);
 
   if (vorname != null && nachname != null && alter != null) {
     print('Willkommen, $vorname $nachname! Du bist $alter Jahre alt.');
