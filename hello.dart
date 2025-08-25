@@ -1,7 +1,3 @@
-void main() {
-  print('Hallo');
-
-  String name = ['Katze', 'Apfel', 'Miau'][0];
-
-  print('Hallo, $name!');
+void main(List<String> arguments) {
+  print('Hello world: $arguments!');
 }
