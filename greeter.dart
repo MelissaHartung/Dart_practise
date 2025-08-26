@@ -5,6 +5,8 @@ void main() {
   String? nachname = '';
   int? alter;
   final namePattern = RegExp(r'^[a-zA-ZäöüÄÖÜß]+$');
+  DateTime now = DateTime.now();
+  int stunde = now.hour;
 
   do {
     print('Gib deinen Vornamen ein:');
@@ -35,7 +37,13 @@ void main() {
     }
   } while (alter == null || alter < 1 || alter > 150);
 
-  if (vorname != null && nachname != null && alter != null) {
-    print('Willkommen, $vorname $nachname! Du bist $alter Jahre alt.');
+  if (alter < 40) {
+    print('Hallo, $vorname');
+  } else if (stunde < 12 && alter >= 40) {
+    print('Guten Morgen! $vorname $nachname');
+  } else if (stunde < 18 && alter >= 40) {
+    print('Guten Tag! $vorname $nachname');
+  } else if (stunde < 22 && alter >= 40) {
+    print('Guten Abend! $vorname $nachname');
   }
 }
