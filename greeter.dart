@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 void main() {
@@ -10,7 +11,7 @@ void main() {
 
   do {
     print('Gib deinen Vornamen ein:');
-    vorname = stdin.readLineSync();
+    vorname = stdin.readLineSync(encoding: utf8);
     // Die Fehlermeldung kommt, wenn die Eingabe ungültig ist.
     // Ungültig ist sie, wenn sie leer ist ODER nicht zum Muster passt.
     if (vorname == null || !namePattern.hasMatch(vorname)) {
@@ -20,7 +21,7 @@ void main() {
 
   do {
     print('Gib deinen Nachnamen ein:');
-    String? input2 = stdin.readLineSync();
+    String? input2 = stdin.readLineSync(encoding: utf8);
     nachname = input2;
     if (nachname == null || !namePattern.hasMatch(nachname)) {
       print('Ungültige Eingabe. Bitte versuche es erneut.');
