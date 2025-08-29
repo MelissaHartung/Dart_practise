@@ -1,3 +1,8 @@
 void main(List<String> arguments) {
-  print('Hello world: $arguments!');
-}
+  if (arguments.isNotEmpty){
+    print('Hello ${arguments[0]}');
+
+      } else {
+        print("Hello World");
+    }
+  }

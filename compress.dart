@@ -6,10 +6,10 @@ void main() {
   // String? input = "abbcccddddeeeeeffffffggggggghhhhhhhhijjkkkllll";
   String previousLetter = "";
   String inputCompressed = "";
+  int counter = 0;
 
-  for (int position = 0, counter = 0; position < input!.length; position++) {
+  for (int position = 0; position < input!.length; position++) {
     String currentLetter = input[position];
-    int end = input.length - 1;
 
     if (position == 0) {
       previousLetter = currentLetter;
@@ -19,9 +19,7 @@ void main() {
       counter++;
     }
     if (previousLetter != currentLetter) {
-      print(position);
-      print(counter);
-      print(currentLetter);
+
       if (counter == 1) inputCompressed += previousLetter;
       if (counter == 2) inputCompressed += previousLetter + previousLetter;
       if (counter > 2) inputCompressed += counter.toString() + previousLetter;
