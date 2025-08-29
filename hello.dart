@@ -1,6 +1,6 @@
 void main(List<String> arguments) {
   if (arguments.isNotEmpty){
-    print('Hello ${arguments[0]}');
+    print('Hello ${arguments.join(' ')}');
 
       } else {
         print("Hello World");
